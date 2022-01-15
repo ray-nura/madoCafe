@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #757575;
+  --back-color: #f4f5f8;
+  --orange-color: #f4af22;
+  --white-color: #ffffff;
+  --dark-blue-color: #1e3765;
+  --main-blue-color: #5576d1;
+  --text-blue-color: #8c9bbc;
+  --green-price-color: #44ca67;
+  --grey-color: #e7e9ee;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sora", sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: var(--back-color);
+  color: var(--text-blue-color);
+}
+a {
+  text-decoration: none;
+  color: var(--dark-blue-color);
+}
+button {
+  padding: 10px 20px;
+  border-radius: 40px;
+  background-color: var(--main-blue-color);
+  border: var(--white-color) solid 2px;
+  box-shadow: 0 3px 5px -1px #757575;
+  color: var(--white-color);
+  transition: 1s;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.main {
+  height: 100vh;
+  max-width: 600px;
+  background: var(--back-color);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+/* main first page  */
+main {
+  padding: 20px;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  /* display: none; */
+}
+main button {
+  background-color: var(--orange-color);
+}
+h2 {
+  color: var(--dark-blue-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+main img {
+  width: 95%;
+}
+.main-taste {
+  font-weight: normal;
+}
+.orangeText {
+  color: var(--orange-color);
+}
+.nameDessert {
+  font-size: 3rem;
+}
+.apply {
+  width: 90%;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 30px;
+  background-image: linear-gradient(
+      66deg,
+      #fff,
+      #fff 46%,
+      hsla(0, 0%, 100%, 0.36) 74%,
+      hsla(0, 0%, 97.1%, 0)
+    ),
+    url("https://assets.website-files.com/5e61309e2ea57b96254de07c/60fb0fcbc1334b219e8cb649_mado-cloth.jpg");
+  background-position: 0 0, 100% 30%;
+  background-size: auto, 60%;
+  background-repeat: no-repeat;
+}
+.oval-btn {
+  border: 1px solid lightgrey;
+  width: 35%;
+  padding: 5px;
+  margin: 20px 0;
+  border-radius: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.subscribe .oval-btn {
+  margin: 20px auto;
+}
+.apply-btn {
+  margin: 10px;
+  background-color: var(--main-blue-color);
+}
+.subs-btn {
+  margin: 10px;
+  background-color: var(--dark-blue-color);
+}
+/* subscribe part */
+.subscribe {
+  text-align: center;
+}
+#subscribe {
+  color: var(--text-blue-color);
+}
+/* ---- Main category ---- */
+.mainMenu {
+  display: block;
+  text-align: center;
+  /* display: none; */
+}
+.menuHeader div,
+h2 {
+  display: inline-block;
+}
+.line {
+  border-top: 1px var(--text-blue-color) solid;
+  width: 80px;
+  height: 10px;
+}
+.category {
+  overflow: hidden;
+  border-radius: 20px;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+  box-shadow: 0 10px 20px -2px var(--text-blue-color);
+  margin: 10px;
+  max-height: 270px;
+  min-height: 270px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+.category:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-blue-color);
+  opacity: 0.2;
+}
+.category:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+.category:hover::after {
+  opacity: 0.5;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+.category a {
+  align-items: center;
+  color: var(--white-color);
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 145%;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  padding: 80px;
+  pointer-events: none;
+  z-index: 1;
+}
+.mainCategory #breakfast {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/615151e04f9f414db02da630_SDF.png);
+}
+.mainCategory #bakery {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80b3ca67c9462e6793a47_bakery.jpg);
+}
+.mainCategory #salads {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/60f1255246b70658316e5cc0_IMG_0027.jpg);
+}
+.mainCategory #gozleme {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c30b728ac5c670baafb_gozleme%20-%20patatoe.jpg);
+}
+.mainCategory #pizza {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c13877cc8375b845d9d_super%20supreme%20pizza.jpg);
+}
+.mainCategory #mains {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a93579a3b8848b25d622cb_kabab%20-%20spicy%20chicken%20saute.JPG);
+}
+.mainCategory #baklava {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80bfd3eba0879dd314725_dolama.jpg);
+}
+.mainCategory #hotDesserts {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c6ecc2049063102dab4_kunafah.jpg);
+}
+.mainCategory #coldDesserts {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c793af4d6095048a7e0_keskul.jpg);
+}
+.mainCategory #iceCream {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/60f12542a4729850899e559c_MADO_2019_01_23_2327.JPG);
+}
+.mainCategory #hotDrinks {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/60f125350325e72c01951c5f_coffee.jpg);
+}
+.mainCategory #coldDrinks {
+  background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80bc89be17d6ef00a5f50_ayran.jpg);
+}
+
+/*  ----******* Menu column container ***----------- */
+.container {
+  width: 100%;
+}
+.card {
+  display: block;
+  width: 100%;
+  color: var(--text-blue-color);
+  background-color: var(--white-color);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px 0 #8c9bbc;
+}
+.card a {
+  color: var(--text-blue-color);
+  font-weight: bold;
+}
+.card .fa-arrow-right {
+  display: none;
+  color: var(--text-blue-color);
+}
+.card:hover .fa-arrow-right {
+  display: flex;
+  float: right;
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+  color: var(--main-blue-color);
+}
+.card:hover a {
+  color: var(--main-blue-color);
+}
+.active a {
+  color: var(--dark-blue-color);
+}
+
+/*  content-column  */
+.content-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+}
+.content-menu .card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin: 0;
+  padding: 0;
+  max-height: 140px;
+  max-width: 475px;
+}
+.content-menu .card .card {
+  padding: 10px 20px;
+  display: block;
+}
+.content-menu img {
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.darkBlue {
+  color: var(--dark-blue-color);
+  font-weight: bold;
+}
+.green {
+  color: var(--green-price-color);
+}
+
+/* ----****** Footer *****----- */
+footer {
+  margin: 20px;
+  line-height: 145%;
+  display: none;
+}
+footer h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--main-blue-color);
+}
+.social-wrapper img {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+  padding: 5px;
+  opacity: 0.7;
+}
+/* ------***** media *****------ */
+@media screen and (min-width: 992px) {
+  .firstPage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90%;
+    /* justify-content: center; */
+  }
+  .mainCategory {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .menuHeader h2 {
+    font-size: 2.5rem;
+  }
+  .category {
+    max-height: 180px;
+    min-height: 180px;
+  }
+  .category a {
+    font-size: 2rem;
+    padding: 40px;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    column-gap: 80px;
+  }
+  .content-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  /* .content-menu .card {
+  } */
+  footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 50px;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    max-width: 1400px;
+  }
+  main h2 {
+    font-size: 3rem;
+  }
+  .nameDessert {
+    font-size: 7rem;
+  }
+}
