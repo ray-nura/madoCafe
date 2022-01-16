@@ -3,8 +3,7 @@ import { getDataMado } from "./dataMado.js";
 
 const data = getData();
 const dataMado = getDataMado();
-const contentColumn = document.querySelector(".content-column");
-const contentMenu = document.querySelector(".content-menu");
+const contentMenu = document.querySelector(".menu-right");
 
 
 
@@ -37,12 +36,36 @@ dataMado.forEach(function (el) {
 //  console.log(data)
 //  console.log(dataMado)
 
-let num = 120000;
-for (let i = 0; i < data.length; i++) {
-    data[i].id = num;
-    num += 1;
-}
-console.log(data)
+// for (let i = 0; i < dataMado.length; i++) {
+//     if (dataMado[i].menus === "Hot Desserts"){
+//         dataMado[i].menus = "hotDesserts"
+//      }
+//     } 
+
+// for (let i = 0; i < dataMado.length; i++) {
+//     if (dataMado[i].menus === "Cold Desserts"){
+//         dataMado[i].menus = "coldDesserts"
+//     }
+// }
+// for (let i = 0; i < dataMado.length; i++) {
+//     if (dataMado[i].menus === "Hot Drinks"){
+//         dataMado[i].menus = "hotDrinks"
+//     } 
+// }
+// for (let i = 0; i < dataMado.length; i++) {
+//     if (dataMado[i].menus === "Cold Drinks"){
+//         dataMado[i].menus = "coldDrinks"
+//     }
+// }
+//     console.log(dataMado)
+// }
+
+// let num = 120000;
+// for (let i = 0; i < data.length; i++) {
+//     data[i].id = num;
+//     num += 1;
+// }
+// console.log(data)
 //  console.log(dataMado)
 
 

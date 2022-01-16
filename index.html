@@ -12,19 +12,71 @@
 </head>
 
 <body>
-  <div class="main">
+  <div class="wrapper">
     <!-- header nav-menu -->
     <header>
-      <div class="logoMado"><img
+      <div class="logoMado" id="logoMado"><img
           src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg" width="123"
-          alt="LogoMado"></div>
-      <div class="nav-bar">
-        <a href=""><i class="fas fa-bars"></i></a>
+          alt="LogoMado">
       </div>
+      <!-- Navigation Menu -->
+      <nav class="nav-menu">
+        <div class="menubtn"><i class="fas fa-bars"></i></div>
+
+        <ul class="nav-menu-content">
+          <div class="nav-menu-left" >
+            <li class="nav"><a href="#location">LOCATION <i class="fas fa-chevron-down" id="locationContent"></i></a>
+              <div class="locationContent">
+                <div>
+                  <h4>DUFFERIN</h4><a href="">North York</a>
+                </div>
+                <div>
+                  <h4>YONGEe</h4><a href="">Downtown</a>
+                </div>
+                <div>
+                  <h4>Square One</h4><a href="">MISSISSAUGA</a>
+                </div>
+                <div>
+                  <h4>HEAD OFFICE</h4><a href="">North York</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav" id="navMenu"><a href="#menu">MENU</a></li>
+            <li class="nav"><a href="#aboutus">ABOUT US <i class="fas fa-chevron-down" id="aboutUsContent"></i></a>
+              <div class="aboutUsContent">
+                <h4>OUR STORY</h4>
+                <h4>REVIEWS</h4>
+                <h4>CONTACT US</h4>
+              </div>
+            </li>
+          </div>
+          <li class="social-wrapper">
+            <a href="" target="_blank">
+              <img
+                src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec64aa242de900cb6d4da4c_facebook_2.png"
+                alt="">
+            </a>
+            <a href="" target="_blank">
+              <img src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec64aa302d99eff4867e050_insta_2.png"
+                alt="">
+            </a>
+            <a href="" target="_blank">
+              <img
+                src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec64aa302d99e638967e051_twitter_2.png"
+                alt="">
+            </a>
+
+            <div>
+              <button><i class="fas fa-utensils"></i> RESERVE A TABLE</button>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
     </header>
     <!-- main reserve a table -->
     <main>
-      <div class="firstPage">
+      <div class="section-slider">
         <div>
           <h2 class="main-taste"><span class="orangeText">taste</span> the real </h2>
           <h2 class="nameDessert">baklava</h2>
@@ -39,7 +91,7 @@
       <div class="apply">
         <p class="oval-btn">be a part of our team</p>
         <h2>We are hiring!</h2>
-        <p class="chef">Experienced Chefs, Prep Cooks, Bakery Staff, Dishwashers,Servers,Hosts & Hostesses</p>
+        <p>Experienced Chefs, Prep Cooks, Bakery Staff, Dishwashers,Servers,Hosts & Hostesses</p>
         <button class="apply-btn"><i class="fas fa-arrow-right"></i> Apply Now</button>
       </div>
       <!-- subscribe part  -->
@@ -53,16 +105,15 @@
         </form>
       </div>
     </main>
-
-    <!-- main category -->
-    <div class="mainMenu">
+    <!-- section  menu  center-->
+    <div class="section-menu-center">
       <div class="menuHeader">
         <div class="line"></div>
         <h2> MENU </h2>
         <div class="line"></div>
       </div>
       <!-- Main Category -->
-      <div class="mainCategory">
+      <div class="menu-center">
         <div class="category" id="breakfast">
           <a href="">Breakfasts & Eggs</a>
         </div>
@@ -90,7 +141,7 @@
         <div class="category" id="coldDesserts">
           <a href="">Cold Desserts</a>
         </div>
-        <div class="category" id="iceCream">
+        <div class="category" id="ice">
           <a href="">Ice Cream Frozen Yoghurt</a>
         </div>
         <div class="category" id="hotDrinks">
@@ -103,15 +154,15 @@
       </div>
     </div>
 
-    <!--  menu container -->
-    <div class="container">
+    <!-- section menu left and right -->
+    <div class="section-menu">
 
       <div class="menu-column">
         <div class="menuHeader">
           <h2> MENU </h2>
         </div>
-        <!-- Menu Column -->
-        <div class="menu-column-card">
+        <!-- Menu Column left  -->
+        <div class="menu-left">
           <div class="card active" id="breakfast">
             <a href="">Breakfasts & Eggs</a><i class="fas fa-arrow-right"></i>
           </div>
@@ -139,7 +190,7 @@
           <div class="card" id="coldDesserts">
             <a href="">Cold Desserts</a><i class="fas fa-arrow-right"></i>
           </div>
-          <div class="card" id="iceCream">
+          <div class="card" id="ice">
             <a href="">Ice Cream Frozen Yoghurt</a><i class="fas fa-arrow-right"></i>
           </div>
           <div class="card" id="hotDrinks">
@@ -151,8 +202,13 @@
         </div>
       </div>
 
-      <!-- <div class="content-column"> -->
-        <div class="content-menu"></div>
+      <!-- menu column right -->
+      <div class="menu-column">
+        <div class="menuHeader">
+          <h1 id="menuHeader"> MENU </h1>
+        </div>
+        <div class="menu-right"></div>
+      </div>
       <!-- </div> -->
     </div>
     <!-- Footer -->
@@ -162,7 +218,7 @@
             src="https://assets.website-files.com/5e61309e2ea57b96254de07c/5ec63e2510ee74ccc9acb969_logo.svg"
             width="123" alt="LogoMado">
         </div>
-        <div class="disclosure">Copyright © 2020 MADO. All rights reserved.</div>
+        <div>Copyright © 2020 MADO. All rights reserved.</div>
       </div>
       <div>
         <h4>Locations</h4>
@@ -200,9 +256,12 @@
         </div>
       </div>
     </footer>
-   
+    <!-- Top Button -->
+    <a href="#logoMado"><i class="fas fa-chevron-up menubtn upbtn"></i></a>
   </div>
-  <script type="module" src="app.js"></script>
+  <!-- <script type="module" src="app.js"></script> -->
+  <script type="module" src="script.js"></script>
+  <!-- <script type="module" src="filter.js"></script> -->
 </body>
 
 </html>

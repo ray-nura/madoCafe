@@ -42,7 +42,7 @@ button {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.main {
+.wrapper {
   height: 100vh;
   max-width: 600px;
   background: var(--back-color);
@@ -50,13 +50,84 @@ button {
   padding-right: 20px;
   margin: 0 auto;
 }
+/* ----- header nav-menu ---------- */
+header {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+.upbtn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  margin: 0;
+}
+.menubtn {
+  background-color: var(--grey);
+  color: var(--dark-blue-color);
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.nav-menu {
+  float: right;
+}
+.nav-menu-content {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  background-color: var(--back-color);
+  padding: 20px;
+  box-shadow: 0px 8px 16px 0px;
+}
+.nav-menu-content a {
+  color: var(--text-blue-color);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px;
+  display: block;
+}
+.nav-menu-content a:hover {
+  color: var(--main-blue-color);
+}
+
+li {
+  list-style-type: none;
+}
+.nav .fa-chevron-down {
+  float: right;
+}
+.locationContent,
+.aboutUsContent {
+  background-color: var(--back-color);
+  padding: 20px;
+  box-shadow: 0px 8px 16px 0px;
+  border-radius: 10px;
+}
+.locationContent {
+  display: none;
+}
+.aboutUsContent {
+  display: none;
+}
+.locationContent,
+.aboutUsContent h4 {
+  color: var(--main-blue-color);
+  padding: 5px;
+}
+/* header h4:hover div {
+  background-color: var(--text-blue-color);
+} */
 /* main first page  */
 main {
   padding: 20px;
   display: block;
   width: 100%;
   margin: 0 auto;
-  /* display: none; */
 }
 main button {
   background-color: var(--orange-color);
@@ -123,11 +194,10 @@ main img {
 #subscribe {
   color: var(--text-blue-color);
 }
-/* ---- Main category ---- */
-.mainMenu {
-  display: block;
+/* ---- Main menu center ---- */
+.section-menu-center {
   text-align: center;
-  /* display: none; */
+  display: none;
 }
 .menuHeader div,
 h2 {
@@ -162,6 +232,7 @@ h2 {
   height: 100%;
   background-color: var(--dark-blue-color);
   opacity: 0.2;
+  pointer-events: none;
 }
 .category:hover {
   transform: scale(1.1);
@@ -185,46 +256,47 @@ h2 {
   pointer-events: none;
   z-index: 1;
 }
-.mainCategory #breakfast {
+.menu-center #breakfast {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/615151e04f9f414db02da630_SDF.png);
 }
-.mainCategory #bakery {
+.menu-center #bakery {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80b3ca67c9462e6793a47_bakery.jpg);
 }
-.mainCategory #salads {
+.menu-center #salads {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/60f1255246b70658316e5cc0_IMG_0027.jpg);
 }
-.mainCategory #gozleme {
+.menu-center #gozleme {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c30b728ac5c670baafb_gozleme%20-%20patatoe.jpg);
 }
-.mainCategory #pizza {
+.menu-center #pizza {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c13877cc8375b845d9d_super%20supreme%20pizza.jpg);
 }
-.mainCategory #mains {
+.menu-center #mains {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a93579a3b8848b25d622cb_kabab%20-%20spicy%20chicken%20saute.JPG);
 }
-.mainCategory #baklava {
+.menu-center #baklava {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80bfd3eba0879dd314725_dolama.jpg);
 }
-.mainCategory #hotDesserts {
+.menu-center #hotDesserts {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c6ecc2049063102dab4_kunafah.jpg);
 }
-.mainCategory #coldDesserts {
+.menu-center #coldDesserts {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80c793af4d6095048a7e0_keskul.jpg);
 }
-.mainCategory #iceCream {
+.menu-center #ice {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/60f12542a4729850899e559c_MADO_2019_01_23_2327.JPG);
 }
-.mainCategory #hotDrinks {
+.menu-center #hotDrinks {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/60f125350325e72c01951c5f_coffee.jpg);
 }
-.mainCategory #coldDrinks {
+.menu-center #coldDrinks {
   background-image: url(https://assets.website-files.com/5e613103afff65141c9d0b09/61a80bc89be17d6ef00a5f50_ayran.jpg);
 }
 
-/*  ----******* Menu column container ***----------- */
-.container {
-  width: 100%;
+/*  ----******* section menu left and right ***----------- */
+.section-menu {
+  /* display: block; */
+  display: none;
 }
 .card {
   display: block;
@@ -239,6 +311,7 @@ h2 {
 .card a {
   color: var(--text-blue-color);
   font-weight: bold;
+  pointer-events: none;
 }
 .card .fa-arrow-right {
   display: none;
@@ -260,13 +333,18 @@ h2 {
   color: var(--dark-blue-color);
 }
 
-/*  content-column  */
-.content-menu {
+/*  menu-right  */
+#menuHeader {
+  color: var(--dark-blue-color);
+  font-size: 3rem;
+  padding: 20px;
+}
+.menu-right {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 20px;
 }
-.content-menu .card {
+.menu-right .card {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 0;
@@ -274,11 +352,11 @@ h2 {
   max-height: 140px;
   max-width: 475px;
 }
-.content-menu .card .card {
+.menu-right .card .card {
   padding: 10px 20px;
   display: block;
 }
-.content-menu img {
+.menu-right img {
   max-width: 100%;
   height: 100%;
   overflow: hidden;
@@ -288,22 +366,39 @@ h2 {
 .darkBlue {
   color: var(--dark-blue-color);
   font-weight: bold;
+  padding: 10px 0;
 }
 .green {
   color: var(--green-price-color);
+  font-size: 1.1rem;
+}
+.addCart {
+  background-color: var(--green-price-color);
+  text-transform: lowercase;
+  float: right;
+  border-radius: 10px;
+  border: none;
 }
 
 /* ----****** Footer *****----- */
 footer {
   margin: 20px;
   line-height: 145%;
-  display: none;
+  /* display: none; */
 }
 footer h4 {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1.2rem;
   color: var(--main-blue-color);
+}
+.social-wrapper {
+  margin-bottom: 10px;
+}
+.social-wrapper a {
+  margin: 0;
+  padding: 0;
+  display: inline;
 }
 .social-wrapper img {
   width: 36px;
@@ -314,13 +409,41 @@ footer h4 {
 }
 /* ------***** media *****------ */
 @media screen and (min-width: 992px) {
-  .firstPage {
+  header {
+    grid-template-columns: 150px auto;
+    justify-content: start;
+  }
+  .menubtn {
+    display: none;
+  }
+  .nav-menu-content {
+    display: inline;
+    position: static;
+    min-width: 950px;
+    width: 100%;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+  .nav-menu-content a,
+  div,
+  li {
+    display: inline;
+  }
+  .nav .fa-chevron-down {
+    float: none;
+  }
+  .social-wrapper a {
+    margin: 0;
+    padding: 0;
+  }
+  .section-slider {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-width: 90%;
-    /* justify-content: center; */
   }
-  .mainCategory {
+  .menu-center {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -336,13 +459,14 @@ footer h4 {
     font-size: 2rem;
     padding: 40px;
   }
-  .container {
-    display: grid;
+  .section-menu {
+    /* display: grid; */
+    display: none;
     grid-template-columns: 1fr 2fr;
     gap: 10px;
     column-gap: 80px;
   }
-  .content-menu {
+  .menu-right {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -359,7 +483,7 @@ footer h4 {
 }
 
 @media screen and (min-width: 600px) {
-  .main {
+  .wrapper {
     max-width: 1400px;
   }
   main h2 {
