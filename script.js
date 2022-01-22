@@ -1,36 +1,35 @@
 import { getDataMado } from "./dataMado.js";
+import { searchByName, navFilter } from "./filter.js"
+import { addCartFN } from "./cart.js"
 
 const dataMado = getDataMado();
+
+// event by click-> menu -> category menu-> left category menu 
 const navMenu = document.querySelector("#navMenu");
-const mainFirstPage = document.querySelector("main");
 const centerMenu = document.querySelector(".menu-center");
-const contentMenu = document.querySelector(".menu-right");
 const leftMenu = document.querySelector(".menu-left");
-
-
+const rightMenu = document.querySelector(".menu-right");
 const menuHeader = document.querySelector("#menuHeader");
+const active = document.querySelectorAll(".card");
+// display none
+const mainFirstPage = document.querySelector("main");
 const sectionMenuCenter = document.querySelector(".section-menu-center");
 const sectionMenu = document.querySelector(".section-menu");
-const locationContent = document.querySelector(".locationContent");
-const clickLocationContent = document.querySelector("#locationContent");
-const aboutUsContent = document.querySelector(".aboutUsContent");
-const clickAboutUsContent = document.querySelector("#aboutUsContent");
-const menuBtn = document.querySelector(".menubtn");
-const clickLogoMado = document.querySelector(".logoMado");
-const navMenuContent = document.querySelector(".nav-menu-content");
+const navFilterBlock = document.querySelector(".nav-search-items");
 
-function refreshPage(){
-    mainFirstPage.style.display = "block"
+function refreshPage() {
+    mainFirstPage.style.display = "grid"
     sectionMenu.style.display = "none"
     sectionMenuCenter.style.display = "none";
+    navFilterBlock.style.display = "none";
 }
 function displayAllCategory() {
     mainFirstPage.style.display = "none"
-    sectionMenu.style.display = "none"
     sectionMenuCenter.style.display = "block";
-    console.log("navbar");
+    sectionMenu.style.display = "none";
+    navFilterBlock.style.display = "none";
 }
-function showResult(filteredArr) {
+export function showResult(filteredArr) {
     sectionMenuCenter.style.display = "none";
     sectionMenu.style.display = "grid"
     clearDiv();
@@ -40,56 +39,54 @@ function showResult(filteredArr) {
         info.innerHTML = `
         <img src="${el.imgURL}" alt="">
         <div class="card">
-        <div>${el.servedFor}</div>
-        <div class="darkBlue">${el.itemTitle}</div>
+        <div>${el.servedFor}</div><br>
+        <div class="darkBlue">${el.itemTitle}</div><br>
         <div class="green">${el.itemPrice}
         <button class="addCart">add <i class="fas fa-cart-arrow-down"></i></button>
-        </div></div>
-    `
-        contentMenu.appendChild(info);
+        </div></div>`
+        rightMenu.appendChild(info);
     })
 }
 function clearDiv() {
-    while (contentMenu.firstChild) {
-        contentMenu.removeChild(contentMenu.firstChild);
+    while (rightMenu.firstChild) {
+        rightMenu.removeChild(rightMenu.firstChild);
     }
 }
-
-function showAllCategory(event) {
+ function showAllCategory(event) {
     let divID = event.target
     let item = divID.id.toLocaleLowerCase();
-    console.log(divID);
+    active.forEach(el => el.classList.remove("active")) // remove active class
+    divID.classList.add("active");            // add active class
     menuHeader.innerText = divID.innerText
     const filteredArray = dataMado.filter((el) => el.menus.toLocaleLowerCase().includes(item));
-    console.log(filteredArray);
     showResult(filteredArray);
+    navFilter(filteredArray);
 }
-
-
-
-leftMenu.addEventListener("click", showAllCategory);
-centerMenu.addEventListener("click", showAllCategory);
+// event by click-> menu -> category menu-> left category menu 
 navMenu.addEventListener("click", displayAllCategory);
+centerMenu.addEventListener("click", showAllCategory);
+leftMenu.addEventListener("click", showAllCategory);
+// ---- nav-Main-Menu ---
+const clickLogoMado = document.querySelector(".logoMado");
 clickLogoMado.addEventListener("click", refreshPage);
-clickLocationContent.addEventListener("click", function(){
-    if (locationContent.style.display == "block"){
-        locationContent.style.display = "none"
-    }else {
-        locationContent.style.display = "block"
+const menuBtn = document.querySelector(".menubtn");
+menuBtn.addEventListener("click", () =>
+    document.querySelector(".nav-menu-content").classList.toggle("show"))
+const clickAboutUsContent = document.querySelector("#aboutUsContent");
+clickAboutUsContent.addEventListener("click", () =>
+    document.querySelector(".aboutUsContent").classList.toggle("show"))
+const clickLocationContent = document.querySelector("#locationContent");
+clickLocationContent.addEventListener("click", () =>
+    document.querySelector(".locationContent").classList.toggle("show"))
+//--- filtr search part ---
+const home = document.querySelector("#home-menu");
+home.addEventListener("click", displayAllCategory);
+const searchAll = document.querySelector(".fa-search");
+searchAll.addEventListener("click", searchByName);
+document.querySelector(".allData").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        searchByName();
     }
-})
-clickAboutUsContent.addEventListener("click", function(){
-    if (aboutUsContent.style.display == "block"){
-        aboutUsContent.style.display = "none"
-    }else {
-        aboutUsContent.style.display = "block"
-    }
-})
-menuBtn.addEventListener("click", function(){
-    if (navMenuContent.style.display == "block"){
-        navMenuContent.style.display = "none"
-    }else {
-        navMenuContent.style.display = "block"
-        menuBtn.style.color = "var(--main-blue-color)"
-    }
-})
+  });
+const addCart1 = document.querySelector(".addCart");
+// addCart1.addEventListener("click", addCartFN)
